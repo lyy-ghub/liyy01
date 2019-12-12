@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.redwine</groupId>
+		<artifactId>wine-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<groupId>com.redwine</groupId>
+	<artifactId>wine-manger</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.redwine</groupId>
+			<artifactId>wine-common</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	<modules>
+		<module>wine-manger-pojo</module>
+		<module>wine-manger-dao</module>
+		<module>wine-manger-service</module>
+		<module>wine-manger-web</module>
+	</modules>
+	
+	<!-- 添加tomcat插件 -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<configuration>
+					<port>8080</port>
+					<path>/WEB-INF/index.jsp</path>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
